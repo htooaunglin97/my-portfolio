@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-bg text-white antialiased;
+  background-image:
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.1), transparent 40%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.noise-bg {
+  background-image: theme("backgroundImage.noise");
+  background-size: 16px 16px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded;
+}
+
