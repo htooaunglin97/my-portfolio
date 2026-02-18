@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { ADMIN_LOGIN_PATH } from "@/app/routes/adminPaths";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { useAuth } from "@/features/auth/hooks/useAuth";
@@ -20,7 +21,7 @@ export function AdminLayoutPage() {
     try {
       await logout();
       toast.success("Signed out.");
-      navigate("/admin/login");
+      navigate(ADMIN_LOGIN_PATH);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unable to sign out.";
       toast.error(message);

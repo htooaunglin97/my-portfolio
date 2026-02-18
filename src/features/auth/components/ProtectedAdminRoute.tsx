@@ -1,9 +1,8 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 
 export function ProtectedAdminRoute() {
-  const location = useLocation();
   const { session, isAdmin, isLoading } = useAuth();
 
   if (isLoading) {
@@ -15,7 +14,7 @@ export function ProtectedAdminRoute() {
   }
 
   if (!session) {
-    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+    return <Navigate to="/" replace />;
   }
 
   if (!isAdmin) {
@@ -24,4 +23,3 @@ export function ProtectedAdminRoute() {
 
   return <Outlet />;
 }
-

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import { ADMIN_LOGIN_PATH } from "@/app/routes/adminPaths";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { ProtectedAdminRoute } from "@/features/auth/components/ProtectedAdminRoute";
 import { AdminBlogEditPage } from "@/pages/admin/AdminBlogEditPage";
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/admin/login",
+    path: ADMIN_LOGIN_PATH,
     element: <AdminLoginPage />,
   },
   {
@@ -59,4 +60,3 @@ export const router = createBrowserRouter([
     element: <NotFoundPage />,
   },
 ]);
-
